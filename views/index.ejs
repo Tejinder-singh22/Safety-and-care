@@ -13,7 +13,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 		<link rel="stylesheet" href="../static/css/owl.carousel.min.css">
-
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="../static/fonts/icomoon/style.css">
 
 		<link href="https://fonts.googleapis.com/css?family=Quicksand:400,600,700&display=swap" rel="stylesheet">
@@ -27,9 +27,201 @@
 		<link rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			@import url("https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap");
+	   :root {
+		 --d: 700ms;
+		 --e: cubic-bezier(0.19, 1, 0.22, 1);
+		 --font-sans: "Rubik", sans-serif;
+		 --font-serif: "Cardo", serif;
+	   }
+	   
+	   .page-content {
+		 box-sizing: border-box;
+	   }
+	   main{
+		padding: 45px;
+	   }
+	   html, body {
+		 height: 100%;
+	   }
+	   
+	   .page-content {
+		 display: grid;
+		 place-items: center;
+	   }
+	   
+	   .page-content {
+		 display: grid;
+		 grid-gap: 1rem;
+		 padding: 1rem;
+		 max-width: 1024px;
+		 margin: 0 auto;
+		 font-family: var(--font-sans);
+	   }
+	   @media (min-width: 600px) {
+		 .page-content {
+		   grid-template-columns: repeat(2, 1fr);
+		 }
+	   }
+	   @media (min-width: 800px) {
+		 .page-content {
+		   grid-template-columns: repeat(4, 1fr);
+		 }
+	   }
+	   
+	   .card {
+		 position: relative;
+		 display: flex;
+		 align-items: flex-end;
+		 overflow: hidden;
+		 padding: 1rem;
+		 width: 100%;
+		 text-align: center;
+		 color: whitesmoke;
+		 background-color: whitesmoke;
+		 box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+	   }
+	   @media (min-width: 600px) {
+		 .card {
+		   height: 350px;
+		 }
+	   }
+	   .card:before {
+		 content: "";
+		 position: absolute;
+		 top: 0;
+		 left: 0;
+		 width: 100%;
+		 height: 110%;
+		 background-size: cover;
+		 background-position: 0 0;
+		 transition: transform calc(var(--d) * 1.5) var(--e);
+		 pointer-events: none;
+	   }
+	   .card:after {
+		 content: "";
+		 display: block;
+		 position: absolute;
+		 top: 0;
+		 left: 0;
+		 width: 100%;
+		 height: 200%;
+		 pointer-events: none;
+		 background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.32) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.54) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.79) 100%);
+		 transform: translateY(-50%);
+		 transition: transform calc(var(--d) * 2) var(--e);
+	   }
+	   .card:nth-child(1):before {
+		 background-image: url(../static/img/download\ \(1\).jpg);
+	   }
+	   .card:nth-child(2):before {
+		 background-image: url(../static/img/driving.jpg);
+	   }
+	   .card:nth-child(3):before {
+		 background-image: url(../static/img/download.jpg);
+	   }
+	   .card:nth-child(4):before {
+		 background-image: url(../static/img/Picture4.jpg);
+	   }
+	   
+	   .content {
+		 position: relative;
+		 display: flex;
+		 flex-direction: column;
+		 align-items: center;
+		 width: 100%;
+		 padding: 1rem;
+		 transition: transform var(--d) var(--e);
+		 z-index: 1;
+	   }
+	   .content > * + * {
+		 margin-top: 1rem;
+	   }
+	   
+	   .title {
+		 font-size: 1.3rem;
+		 font-weight: bold;
+		 line-height: 1.2;
+	   }
+	   
+	   .copy {
+		 font-family: var(--font-serif);
+		 font-size: 1.125rem;
+		 font-style: italic;
+		 line-height: 1.35;
+	   }
+	   
+	   .btn-work {
+		 cursor: pointer;
+		 margin-top: 1.5rem;
+		 padding: 0.75rem 1.5rem;
+		 font-size: 0.65rem;
+		 font-weight: bold;
+		 letter-spacing: 0.025rem;
+		 text-transform: uppercase;
+		 color: white;
+		 background-color: black;
+		 border: none;
+	   }
+	   .btn-work:hover {
+		 background-color: #0d0d0d;
+	   }
+	   .btn-work:focus {
+		 outline: 1px dashed yellow;
+		 outline-offset: 3px;
+	   }
+	   
+	   @media (hover: hover) and (min-width: 600px) {
+		 .card:after {
+		   transform: translateY(0);
+		 }
+	   
+		 .content {
+		   transform: translateY(calc(100% - 4.5rem));
+		 }
+		 .content > *:not(.title) {
+		   opacity: 0;
+		   transform: translateY(1rem);
+		   transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+		 }
+	   
+		 .card:hover,
+	   .card:focus-within {
+		   align-items: center;
+		 }
+		 .card:hover:before,
+	   .card:focus-within:before {
+		   transform: translateY(-4%);
+		 }
+		 .card:hover:after,
+	   .card:focus-within:after {
+		   transform: translateY(-50%);
+		 }
+		 .card:hover .content,
+	   .card:focus-within .content {
+		   transform: translateY(0);
+		 }
+		 .card:hover .content > *:not(.title),
+	   .card:focus-within .content > *:not(.title) {
+		   opacity: 1;
+		   transform: translateY(0);
+		   transition-delay: calc(var(--d) / 8);
+		 }
+	   
+		 .card:focus-within:before, .card:focus-within:after,
+	   .card:focus-within .content,
+	   .card:focus-within .content > *:not(.title) {
+		   transition-duration: 0s;
+		 }
+	   }
+		   </style>
 	</head>
 
 	<body>
+		<!-- <button onclick="topFunction()" id="myBtn" title="Go to top">^</button> -->
+		<!-- <img src="../static/img/up-arrow-svgrepo-com.svg" alt="" id="myBtn" title="Go to top"> -->
+		<button type="button" onclick="topFunction()" id="myBtn" title="Go to top"> <img src="../static/img/up-arrow-svgrepo-com.svg" height ="50" width="50" /></button>
 		<section>
 			<div class="site-mobile-menu site-navbar-target">
 				<div class="site-mobile-menu-header">
@@ -52,14 +244,10 @@
 
 						<nav class="mx-auto site-navigation">
 							<ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-								<li><a href="index.html" class="nav-link active">Home</a></li>
+								<li><a href="#" class="nav-link active">Home</a></li>
 								<li><a href="#about_section">About</a></li>
-								<li class="has-children">
-									<a href="job-listings.html">Job Listings</a>
-									<ul class="dropdown">
-										<li><a href="job-single.html">Job Single</a></li>
-										<li><a href="post-job.html">Post a Job</a></li>
-									</ul>
+								<li>
+									<a href="#gallery">Gallery</a>
 								</li>
 								<li class="has-children">
 									<a href="services.html">Pages</a>
@@ -74,7 +262,7 @@
 										<li><a href="gallery.html">Gallery</a></li>
 									</ul>
 								</li>
-								<li><a href="blog.html">Blog</a></li>
+								<li><a href="#resources">Resources</a></li>
 								<li><a href="#contact">Contact</a></li>
 								<li class="d-lg-none"><a href="post-job.html"><span class="mr-2">+</span> Post a Job</a>
 								</li>
@@ -84,9 +272,6 @@
 
 						<div class="right-cta-menu text-right d-flex aligin-items-center col-6">
 							<div class="ml-auto">
-								<a href="post-job.html"
-									class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"><span
-										class="mr-2 icon-add"></span>Post a Job</a>
 								<a href="login.html"
 									class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span
 										class="mr-2 icon-lock_outline"></span>Log In</a>
@@ -99,7 +284,7 @@
 					</div>
 				</div>
 			</header>
-			</div>
+			
 
 			<div class="hero" style="background-image: url('../static/img/IMG_4077.JPG');">
 				<div class="flex-container">
@@ -149,7 +334,7 @@
 		</section>
 	</section>
  
-			<section class="call-to-action section-padding">
+			<section class="call-to-action section-padding" id="resources">
                 <div class="container">
                     <div class="row align-items-center">
 
@@ -162,15 +347,47 @@
                         </div>
 
                         <div class="col-lg-3 col-6 ms-lg-auto mt-4 mt-lg-0">
-                            <a href="#section_5" class="custom-btn btn">Download PDF</a>
+                            <a href="../static/img/Safety and care.pptx" class="custom-btn btn">Download PDF</a>
                         </div>
 
                     </div>
                 </div>
 		    </section>
+			<section>
+				<main class="page-content">
+					<div class="card">
+					  <div class="content">
+						<h2 class="title">First Aid</h2>
+						<p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+						<button class="btn-work">Read more</button>
+					  </div>
+					</div>
+					<div class="card">
+					  <div class="content">
+						<h2 class="title">Defensive driving</h2>
+						<p class="copy">Plan your next beach trip with these fabulous destinations</p>
+						<button class="btn-work">Read more</button>
+					  </div>
+					</div>
+					<div class="card">
+					  <div class="content">
+						<h2 class="title">Fire Safety</h2>
+						<p class="copy">It's the desert you've always dreamed of</p>
+						<button class="btn-work">Read more</button>
+					  </div>
+					</div>
+					<div class="card">
+					  <div class="content">
+						<h2 class="title">Women Safety</h2>
+						<p class="copy">Seriously, straight up, just blast off into outer space today</p>
+						<button class="btn-work">Read more</button>
+					  </div>
+					</div>
+				  </main>
+				</section>
 
 <section>
-<div class="outer-carousel">
+<div class="outer-carousel" id="gallery">
 	<div id="demo" class="carousel slide" data-ride="carousel">
 		<ul class="carousel-indicators">
 		  <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -181,22 +398,20 @@
 		  <div class="carousel-item active">
 			<img src="../static/img/IMG_4077.JPG" alt="Los Angeles" width="1100" height="500">
 			<div class="carousel-caption">
-			  <h3>Los Angeles</h3>
-			  <p>We had such a great time in LA!</p>
+			   
+			 
 			</div>   
 		  </div>
 		  <div class="carousel-item">
 			<img src="../static/img/WhatsApp Image 2022-07-22 at 3.46.39 PM.jpeg" alt="Chicago" width="1100" height="500">
 			<div class="carousel-caption">
-			  <h3>Chicago</h3>
-			  <p>Thank you, Chicago!</p>
+			   
 			</div>   
 		  </div>
 		  <div class="carousel-item">
 			<img src="../static/img/FB_IMG_1487306277657.jpg" alt="New York" width="1100" height="500">
 			<div class="carousel-caption">
-			  <h3>New York</h3>
-			  <p>We love the Big Apple!</p>
+			  
 			</div>   
 		  </div>
 		</div>
@@ -218,7 +433,7 @@
 <!-- Section: Social media -->
 <section 
 	 class="d-flex justify-content-between p-4"
-	 style="background-color: #fffefc"
+	 style="background-color: #fffefc;"
 	 >
 <!-- Left -->
 <div class="me-5">
@@ -259,7 +474,7 @@
   <!-- Grid column -->
   <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 	<!-- Content -->
-	<h6 class="text-uppercase fw-bold">Saini Welding Works</h6>
+	<h6 class="text-uppercase fw-bold">Safety And Care</h6>
 	<hr
 		class="mb-4 mt-0 d-inline-block mx-auto"
 		style="width: 60px; background-color: #ff0000; height: 2px"

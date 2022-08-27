@@ -88,19 +88,63 @@ $(function() {
 
 });
 
-// When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
+// // When the user scrolls the page, execute myFunction
+// window.onscroll = function() {myFunction()};
 
-// Get the navbar
-var navbar = document.getElementById("navbar");
+// // Get the navbar
+// var navbar = document.getElementById("navbar");
 
-// Get the offset position of the navbar
-var sticky = navbar.offsetTop;
+// // Get the offset position of the navbar
+// var sticky = navbar.offsetTop;
 
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-	console.log('everything is running fine');
-  
-    navbar.classList.add("sticky")
+// // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+// function myFunction() {
+// 	console.log('everything is running fine');
+    
+//     navbar.classList.add("sticky")
    
+// }
+
+
+$(".site-navigation .site-menu a[href='#about_section']").click(function() {
+    $('html,body').animate({
+        scrollTop: $(" #about_section").offset().top},
+        'slow');
+});
+
+$(".site-navigation .site-menu a[href='#contact']").click(function() {
+    $('html,body').animate({
+        scrollTop: $(" #contact").offset().top},
+        'slow');
+});
+
+$(".site-navigation .site-menu a[href='#gallery']").click(function() {
+    $('html,body').animate({
+        scrollTop: $(" #gallery").offset().top},
+        'slow');
+});
+
+$(".site-navigation .site-menu a[href='#resources']").click(function() {
+    $('html,body').animate({
+        scrollTop: $(" #resources").offset().top},
+        'slow');
+});
+
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+	$('html,body').animate({ scrollTop: 0 }, 400);
+	return false;
 }
